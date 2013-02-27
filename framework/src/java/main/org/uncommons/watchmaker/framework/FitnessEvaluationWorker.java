@@ -19,6 +19,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+
 import org.uncommons.util.concurrent.ConfigurableThreadFactory;
 import org.uncommons.util.id.IDSource;
 import org.uncommons.util.id.IntSequenceIDSource;
@@ -53,7 +54,7 @@ public class FitnessEvaluationWorker
     /**
      * Creates a FitnessEvaluationWorker that uses daemon threads.
      */
-    FitnessEvaluationWorker()
+    public FitnessEvaluationWorker()
     {
         this(true);
     }
@@ -100,7 +101,7 @@ public class FitnessEvaluationWorker
     /**
      * A FitnessWorker cannot be garbage-collected if its thread pool has not been shutdown.
      * This method, invoked on garabage collection (or maybe not at all), shuts down the thread
-     * pool so that the threads can be released. 
+     * pool so that the threads can be released.
      * @throws Throwable Any exception or error that occurs during finalisation.
      */
     @Override
