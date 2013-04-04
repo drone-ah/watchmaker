@@ -18,6 +18,8 @@ package org.uncommons.watchmaker.framework;
 import java.util.Collection;
 import java.util.List;
 
+import org.uncommons.watchmaker.framework.evaluators.PopulationEvaluator;
+
 /**
  * Operations for classes that provide an evolution implementation.
  * @param <T> The type of entity evolved by the evolution engine.
@@ -160,4 +162,6 @@ public interface EvolutionEngine<T>
      * interrupted.
      */
     List<TerminationCondition> getSatisfiedTerminationConditions();
+
+    void setPopulationEvaluator(PopulationEvaluator<T> evaluator);
 }

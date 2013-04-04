@@ -294,4 +294,10 @@ public abstract class AbstractEvolutionEngine<T> implements EvolutionEngine<T>
         }
     }
 
+
+    @Override
+    public void setPopulationEvaluator(PopulationEvaluator<T> evaluator) {
+        this.popEvaluator = evaluator;
+    }
+
 }
